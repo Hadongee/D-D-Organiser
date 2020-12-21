@@ -5,7 +5,7 @@ from Note import Note
 class NotedCanvas:
     def __init__ (self, parent, sidebar) :
         # TODO: Find a better way to do this, how to do constants in python?
-        self.distance_for_select = 100
+        self.distance_for_select = 200
         self.sidebar = sidebar
 
         self.canvas = Canvas(parent, bg="#ccc", width=1000, height=800)
@@ -41,7 +41,6 @@ class NotedCanvas:
             if (closest == None or note.square_distance_to(x, y) < closest.square_distance_to(x, y)) and (note.square_distance_to(x, y) <= self.distance_for_select):
                 closest = note
         if closest != None:
-            # TODO: Functionality for selecting a note for editting
             self.sidebar.show_note(closest)
         else:
             self.sidebar.cancel_note()

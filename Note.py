@@ -6,12 +6,11 @@ class Note:
         self.x = x
         self.y = y
         self.name = "New Note"
+        self.description = ""
         self.marker = canvas.create_oval(x - 5, y - 5, x + 5, y + 5, fill="white")
         self.text = canvas.create_text(x, y-15, text=self.name, font='TkMenuFont', justify='center')
         self.box = canvas.create_rectangle(canvas.bbox(self.text),fill="white")
         canvas.tag_lower(self.box, self.text)
-
-        self.edit_name("HEllo!")
 
     def edit_name (self, new_name):
         self.name = new_name
